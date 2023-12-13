@@ -69,6 +69,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'filters': 'app.templatetags.filters',
+            }
         },
     },
 ]
@@ -138,3 +141,6 @@ LOGOUT_REDIRECT_URL = 'app:index'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# セッションを毎回更新する
+SESSION_SAVE_EVERY_REQUEST = True
